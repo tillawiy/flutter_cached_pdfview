@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 class PDF {
+ 
   final bool enableSwipe;
   final bool swipeHorizontal;
   final String password;
@@ -19,6 +20,9 @@ class PDF {
   final ErrorCallback onError;
   final PageErrorCallback onPageError;
   final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+   // إضافة خصائص جديدة للتمرير المستمر
+  final bool enableContinuousScroll;
+  final double viewportFraction;
 
   const PDF({
     this.onViewCreated,
@@ -37,5 +41,7 @@ class PDF {
     this.fitEachPage = true,
     this.defaultPage = 0,
     this.fitPolicy = FitPolicy.WIDTH,
+    this.enableContinuousScroll = false,  // خاصية جديدة
+    this.viewportFraction = 1.0, 
   });
 }
